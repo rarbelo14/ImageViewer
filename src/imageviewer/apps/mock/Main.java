@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 public class Main {
     
+    private final static Command nullCommand = new Command.Null();    
     private final Scanner scanner = new Scanner(System.in);
     private final Map<String, Command> commands = new HashMap();
 
@@ -33,7 +34,7 @@ public class Main {
     }
 
     private void execute() {
-        while (true) commands.get(input()).execute();
+        while (true) commands.getOrDefault(input(), nullCommand).execute();
     }
     
     private String input() {
