@@ -1,9 +1,7 @@
 package imageviewer.apps.mock;
 
 import imageviewer.control.Command;
-import imageviewer.control.ExitImageCommand;
-import imageviewer.control.NextImageCommand;
-import imageviewer.control.PrevImageCommand;
+import imageviewer.control.InitCommand;
 import imageviewer.model.Image;
 import imageviewer.view.ImageDisplay;
 import imageviewer.view.ImageLoader;
@@ -14,7 +12,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    
+
     private final static Command nullCommand = new Command.Null();    
     private final Scanner scanner = new Scanner(System.in);
     private final Map<String, Command> commands = new HashMap();
@@ -24,13 +22,9 @@ public class Main {
     }
 
     public Main() {
-        List<Image> images = new MockImageLoader().load();
-        ImageDisplay imageDisplay = new MockImageDisplay();
-        imageDisplay.display(images.get(0));
-                
-        commands.put("N", new NextImageCommand(images, imageDisplay));
-        commands.put("P", new PrevImageCommand(images, imageDisplay));
-        commands.put("Q", new ExitImageCommand());
+        InitCommand init = new InitCommand();
+        init.execute();
+        commands.putAll(init.getCommands());
     }
 
     private void execute() {
