@@ -9,8 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    //53:41
-    // Practicas en aula par grupo 2
+
     private final static Command nullCommand = new Command.Null();    
     private final Scanner scanner = new Scanner(System.in);
     private final Map<String, Command> commands = new HashMap();
