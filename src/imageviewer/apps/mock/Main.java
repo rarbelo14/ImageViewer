@@ -31,5 +31,5 @@ public class Main {
     private String input() {
         return scanner.next().toUpperCase();
     }
-    
+   
 }
