@@ -1,6 +1,6 @@
-package imageviewer.view;
+package imageviewer_MVC.view;
 
-import imageviewer.model.Image;
+import imageviewer_MVC.model.Image;
 import java.util.List;
 
 public interface ImageLoader {

@@ -1,10 +1,10 @@
-package imageviewer.apps.swing;
+package imageviewer_MVC.apps.swing;
 
-import imageviewer.control.Command;
-import imageviewer.control.NextImageCommand;
-import imageviewer.control.PrevImageCommand;
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer_MVC.control.Command;
+import imageviewer_MVC.control.NextImageCommand;
+import imageviewer_MVC.control.PrevImageCommand;
+import imageviewer_MVC.model.Image;
+import imageviewer_MVC.view.ImageDisplay;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +18,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 public class Main extends JFrame {
-    
-    //CORREGIR UN ERROR EN LA VISUALIZACIÓN DE LA IMAGEN
     
     public static void main(String[] args) {
         new Main().execute();

@@ -1,4 +1,4 @@
-package imageviewer.model;
+package imageviewer_MVP.model;
 
 public class Image {
     

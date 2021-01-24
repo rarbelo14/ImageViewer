@@ -1,7 +1,7 @@
-package imageviewer.apps.swing;
+package imageviewer_MVC.apps.swing;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer_MVC.model.Image;
+import imageviewer_MVC.view.ImageDisplay;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;

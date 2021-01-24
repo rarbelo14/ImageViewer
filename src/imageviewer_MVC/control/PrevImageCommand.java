@@ -1,7 +1,7 @@
-package imageviewer.control;
+package imageviewer_MVC.control;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer_MVC.model.Image;
+import imageviewer_MVC.view.ImageDisplay;
 import java.util.List;
 
 public class PrevImageCommand implements Command{
