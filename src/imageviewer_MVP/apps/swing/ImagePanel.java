@@ -29,8 +29,29 @@ class ImagePanel extends JPanel implements ImageDisplay{
     
     @Override
     public void paint(Graphics g) {
-        if (bitmap != null) g.drawImage(bitmap, offset, 0, null);
-        if (bitmap2 != null && offset != 0) g.drawImage(bitmap2, offset < 0 ? bitmap.getWidth()+offset : offset-bitmap2.getWidth(), 0, null);
+        if (bitmap != null){
+            Box box = new Box(bitmap.getWidth(), bitmap.getHeight(), this.getWidth(), this.getHeight());
+            g.drawImage(bitmap, offset, box.y, box.width, box.height, null);
+        }
+        if (bitmap2 != null && offset != 0){
+            Box box = new Box(bitmap2.getWidth(), bitmap2.getHeight(), this.getWidth(), this.getHeight());
+            g.drawImage(bitmap2, offset < 0 ? bitmap.getWidth()+offset : offset-bitmap2.getWidth(), box.y, box.width, box.height, null);
+        }
+    }
+    
+    private static class Box {
+        final int x;
+        final int y;
+        final int width;
+        final int height;
+        private Box(double imageWidth, double imageHeight, double panelWidth, double panelHeight) {
+            double imageRatio = imageWidth / imageHeight;
+            double panelRatio = panelWidth / panelHeight;
+            this.width = (int) (imageRatio >= panelRatio ? panelWidth : imageWidth * panelHeight / imageHeight);                     
+            this.height = (int) (imageRatio <= panelRatio ? panelHeight : imageHeight * panelWidth / imageWidth);
+            this.x = (int) ((panelWidth - this.width) / 2);
+            this.y = (int) ((panelHeight - this.height) / 2);
+        } 
     }
 
     @Override
